@@ -1,4 +1,4 @@
-const socket = io("/");
+const socket = io();
 const videoGrid = document.getElementById("video-grid");
 const myVideo = document.createElement("video");
 const showChat = document.querySelector("#showChat");
@@ -21,11 +21,7 @@ showChat.addEventListener("click", () => {
 
 const user = prompt("Enter your name");
 
-var peer = new Peer(undefined, {
-    path: "/peerjs",
-    host: "/",
-    port: "443",
-});
+var peer = new Peer();
 
 let myVideoStream;
 navigator.mediaDevices
